@@ -22,13 +22,19 @@ public class computaion {
 			System.out.println("-------------------------------------");
 			System.out.println("--Snake Ladder Game Program--");
 			System.out.println("-------------------------------------");
+			
 			System.out.println("--1st Player--");
 			System.out.println("Initial Position of 1st player is :"+" "+startpos);
 			System.out.println(" ");
-			System.out.println("--1st Player Rolls a Die and gets value from 1-6 --");
+			
+			System.out.println("--1st Player Rolls a Die and gets value from 1-6 |Note*(0) i not counted|--");
 			Random rand=new Random();
 			int roll=rand.nextInt(7);
-			System.out.println(roll);
+			startpos=startpos+roll;
+			System.out.println(" ");
+			System.out.println("1st Player gets "+roll+" "+"on a die roll.");
+			System.out.println("Current position for 1st player is :"+startpos);
+			
 		
 	
 	}
