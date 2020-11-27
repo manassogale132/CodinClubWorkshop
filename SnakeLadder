@@ -8,6 +8,7 @@ public class Main {
 		obj1.startPos();
 		//obj1.rollDie();
                 obj1.checkOption();
+		obj1.PosHundred();
 	}
 
 }
@@ -78,11 +79,53 @@ public void CheckOption() {              //UseCase3
 		System.out.println("--SNAKE - so player moves behind.");
 		break;
 	}
+}
 	
-	
+	public void PosHundred() {              //UseCase4
 		
+		int startPos=0;
+		int roll;
+		int option;
+		
+		System.out.println("--1st Player Rolls a Die and gets value from 1-6 |Note*(0) i not counted|--");
+		
+		while(startPos<=100) {
+		Random rand=new Random();         // for die roll (1-6)
+		roll=rand.nextInt(7);
+		
+		
+		System.out.println("*1st Player gets "+roll+" "+"on a die roll.");
+		System.out.println("*1st Player moves "+roll+" "+"steps ahead.");
+		
+		
+		
+		Random rand1=new Random();   // for switch case (1-3)
+		option=rand1.nextInt(3);
+		
+		switch(option)  {
+		
+		case 0:
+			System.out.println("*--NO PLAY - so player stays at the same position.="+startPos);
+			System.out.println(" ");
+			break;
+		
+		case 1:
+			startPos=startPos+roll;
+			System.out.println("*--LADDER - so player moves ahead.="+startPos);
+			System.out.println(" ");
+			break;
+		
+		case 2:
+			startPos=startPos-roll;
+			System.out.println("*--SNAKE - so player moves behind.="+startPos);
+			System.out.println(" ");
+			break;
+		}
+		}
+		}
+	
 			
 	}
 	
-}
+
 
