@@ -11,12 +11,11 @@ public class Main {
 	}
 
 }
-
 import java.util.Random;
 
 public class SnakeAndLadder {
 	
-	public void startPos() {              //UseCase1
+	public void StartPos() {              //UseCase1
 		
 			int startPos=0;
 			
@@ -29,7 +28,7 @@ public class SnakeAndLadder {
 			System.out.println(" ");
 	}
 	
-	public void rollDie() {              //UseCase2
+	public void RollDie() {              //UseCase2
 		
 		int startPos=0;
 		int roll;
@@ -43,26 +42,27 @@ public class SnakeAndLadder {
 			
 	}
 	
-public void checkOption() {              //UseCase3
+public void CheckOption() {              //UseCase3
 		
 	int startPos=0;
 	int roll;
 	int option;
 	int step;
 	
-	Random rand=new Random();
+	
+	Random rand=new Random();         // for die roll (1-6)
 	roll=rand.nextInt(7);
-
+	startPos=startPos+roll;
 	System.out.println("--1st Player Rolls a Die and gets value from 1-6 |Note*(0) i not counted|--");
-	System.out.println("1st Player gets "+roll+" "+"on a die roll.");
-	System.out.println("1st Player moves "+roll+" "+"ahead");
+	System.out.println("*1st Player gets "+roll+" "+"on a die roll.");
+	System.out.println("*1st Player moves "+startPos+" "+"steps ahead.");
 	System.out.println(" ");
 	
-	Random rand1=new Random();   // for switch case
+	Random rand1=new Random();   // for switch case (1-3)
 	option=rand.nextInt(3);
 	
-	Random rand2=new Random();   // for number of steps it goes back of ahead.
-	step=rand.nextInt(7);
+	//Random rand2=new Random();   // for number of steps it goes back or ahead. (1-12)
+	//step=rand.nextInt(12);
 	
 	switch(option) {
 	
@@ -71,11 +71,11 @@ public void checkOption() {              //UseCase3
 		break;
 	
 	case 1:
-		System.out.println("--LADDER - so player moves ahead by :"+" "+step);
+		System.out.println("--LADDER - so player moves ahead.");
 		break;
 	
 	case 2:
-		System.out.println("--SNAKE - so player moves behind by :"+" "+step);
+		System.out.println("--SNAKE - so player moves behind.");
 		break;
 	}
 	
@@ -85,3 +85,4 @@ public void checkOption() {              //UseCase3
 	}
 	
 }
+
