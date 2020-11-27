@@ -1,0 +1,100 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		SnakeAndLadder obj1=new SnakeAndLadder();
+		
+		obj1.FirstPlayer();
+		
+	}
+
+}
+
+import java.util.Random;
+
+public class SnakeAndLadder{
+	
+	int playerOneStartPos=0;
+	int playerTwoStartPos=0;
+	int rollOne;
+	int rollTwo;
+	int option;
+	int playerOnedieCounter = 0;
+	int playerTwodieCounter = 0;
+
+public void FirstPlayer() {              //UseCase4/UseCase5/UseCase6
+		
+	
+		System.out.println("-------------------------------------");
+		System.out.println("--Snake Ladder Game Program--");
+		System.out.println("-------------------------------------");
+		
+		System.out.println("--1st Player--");
+		System.out.println("Initial Position of 1st player is :"+" "+playerOneStartPos);
+		System.out.println(" ");
+
+		
+		System.out.println("--1st Player Rolls a Die and gets value from 1-6 |Note*(0) i not counted|--");
+		
+		
+		while((playerOneStartPos!=100)&&(playerTwoStartPos!=100)) {
+		
+		Random rand=new Random();         // for 1st player die roll (1-6)
+		rollOne=rand.nextInt(7);
+		
+		Random rand1=new Random();         // for 2nd  player die roll (1-6)
+		rollTwo=rand1.nextInt(7);
+		
+		System.out.println("*1st Player gets "+rollOne+" "+"on a die roll.");
+		playerOnedieCounter++;
+		System.out.println("*2nd Player gets "+rollTwo+" "+"on a die roll.");
+		playerTwodieCounter++;
+		
+		Random rand2=new Random();   // for switch case (1-3)
+		option=rand2.nextInt(3);
+		
+		switch(option)  {
+		
+		case 0:
+			System.out.println("*--NO PLAY - so player stays at the same position.="+playerOneStartPos);
+			System.out.println("*--NO PLAY - so player stays at the same position.="+playerTwoStartPos);
+			System.out.println(" ");
+			break;
+		
+		case 1:
+			playerOneStartPos=playerOneStartPos+rollOne;
+			playerTwoStartPos=playerTwoStartPos+rollTwo;
+			System.out.println("*--LADDER - so 1st player moves ahead.="+playerOneStartPos);
+			System.out.println("*--LADDER - so 2nd player moves ahead.="+playerTwoStartPos);
+			System.out.println(" ");
+		
+		    break;
+		
+		case 2:
+			playerOneStartPos=playerOneStartPos-rollOne;
+			playerTwoStartPos=playerTwoStartPos-rollTwo;
+			System.out.println("*--SNAKE - so 1st player moves behind.="+playerOneStartPos);
+			System.out.println("*--LADDER - so 2nd player moves ahead.="+playerTwoStartPos);
+			System.out.println(" ");
+			
+		    break;
+		
+		
+		}
+		}
+		
+		System.out.println("------------------------------------------------");
+		System.out.println("Number of times the die is rolled to reach 100 and win for 1st Player :"+"  "+playerOnedieCounter);
+		System.out.println("Number of times the die is rolled to reach 100 and win for 2nd Player :"+"  "+playerTwodieCounter);
+                System.out.println("            ");
+		if(playerOneStartPos>playerTwoStartPos) {
+			System.out.println("1st Player Wins");
+		}else {
+			System.out.println("2nd Player Wins");
+		}
+		}
+
+
+}
