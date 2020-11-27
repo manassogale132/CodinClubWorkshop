@@ -11,6 +11,8 @@ public class Main {
 
 }
 
+import java.util.Random;
+
 public class computaion {
 	
 	public void comp() {
@@ -23,5 +25,11 @@ public class computaion {
 			System.out.println("--1st Player--");
 			System.out.println("Initial Position of 1st player is :"+" "+startpos);
 			System.out.println(" ");
-      }
-      }
+			System.out.println("--1st Player Rolls a Die and gets value from 1-6 --");
+			Random rand=new Random();
+			int roll=rand.nextInt(7);
+			System.out.println(roll);
+		
+	
+	}
+}
