@@ -89,7 +89,7 @@ public void CheckOption() {              //UseCase3
 		
 		System.out.println("--1st Player Rolls a Die and gets value from 1-6 |Note*(0) i not counted|--");
 		
-		while(startPos<=100) {
+		while(startPos!=100) {
 		Random rand=new Random();         // for die roll (1-6)
 		roll=rand.nextInt(7);
 		
