@@ -23,5 +23,6 @@ public class computaion {
 			System.out.println("--1st Player--");
 			System.out.println("Initial Position of 1st player is :"+" "+startpos);
 			System.out.println(" ");
-      }
+     
+     }
       }
